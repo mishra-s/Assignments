@@ -1,7 +1,7 @@
 package com.company;
 import java.util.*;
 
-public class doraMangoTree {
+public class doraGarden {
 
 
    static int checkMangoTree( int treeNumber, int rowNumber, int columnNumber )
