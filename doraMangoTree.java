@@ -4,11 +4,11 @@ import java.util.*;
 public class doraMangoTree {
 
 
-   static int checkMangoTree( int rowIndex, int columnIndex, int rowNumber, int columnNumber)
+   static int checkMangoTree( int treeNumber, int rowNumber, int columnNumber )
     {
-         if( rowIndex > rowNumber || columnIndex > columnNumber  )
-            return -1;
-         if( rowIndex == 1 && ( columnIndex == 1 || columnIndex == columnNumber ) )
+         if( treeNumber <= 0  || treeNumber > ( rowNumber * columnNumber) )
+             return -1;
+         if( treeNumber <= columnNumber || treeNumber%columnNumber == 1 || treeNumber%columnNumber == 0 )
              return 1;
          else
              return 0;
@@ -20,10 +20,10 @@ public class doraMangoTree {
 
         int numberOfRow =       sc.nextInt();
         int numberOfColumn =    sc.nextInt();
-        int queryRowIndex =     sc.nextInt();
-        int queryColumnIndex =  sc.nextInt();
+        int treeNumber =        sc.nextInt();
 
-        int flagMangoTree = checkMangoTree(queryRowIndex, queryColumnIndex, numberOfRow,numberOfColumn);
+
+        int flagMangoTree = checkMangoTree( treeNumber, numberOfRow,numberOfColumn);
 
         if( flagMangoTree == 1)
             System.out.println("Yes It is a Mango Tree");
